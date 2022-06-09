@@ -1,11 +1,16 @@
 :root
 {
-    --color-main: #7069f7;
-    --color-main_light: #a59fff;
+    --color-main: #5b52ff;
+    --color-main-light: #9691ff;
     --color-main-white: #fff;
     --color-main-dark: #2c2c2c;
-    --color-light-grey: #b9b9b9;
+    --color-light-grey: #e9e9e9;
     --color-main-black: #000;
+
+    --border-radius-1: 0.2rem;
+    --border-radius-2: 0.4rem;
+
+    --transition: all 400ms ease;
 
 }
 *{
@@ -21,34 +26,44 @@
 }
 
 /* Navigation bar */
-
-.navbar{
+a
+{
+    color: var(--color-main-white);
+}
+h1
+{
+    color: var(--color-main-white);
+}
+nav
+{
     background-color: var(--color-main-dark);
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    z-index: 11;
 }
 
-.navbar ul{
-    display: inline-flex;
-    color: var(--color-main-white);
+.navbar__container{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.navbar ul li{
-    min-width: 9rem;
-    background-color: #7069f7;
-    text-align: center;
-    padding: 1rem 0rem;
-
-}
-
-.navbar ul li a
+.navMenu
 {
-    color: var(--color-main-white);
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    gap: 4rem;
 }
 
-.navbar ul li:hover
+.navMenu:hover
 {
-    background: var(--color-main_light);
-    border-radius: 0.2rem;
+    background-color: var(--color-main);
+    transition: var(--transition);
 }
+
 
 /* DropDown button*/
 
@@ -62,16 +77,15 @@
 {
     display: block;
     position: relative;
-    background-color: var(--color-main_light);
 }
 
-.dropMenu ul li
-{
-    background-color: var(--color-light-grey);
-}
 
 .navbar ul li:hover .dropMenu
 {
     display: block;
     margin-top: 1rem;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+    transition: opacity 150ms ease-in-out;
+    z-index: 12;
 }
+
