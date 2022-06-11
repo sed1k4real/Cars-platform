@@ -1,10 +1,14 @@
+/*---------------Links-------------*/
+
+
+
 :root
 {
     --color-main: #5b52ff;
     --color-danger: #ec752f;
     --color-main-light: #9691ff;
     --color-main-white: #fff;
-    --color-main-dark: #252525;
+    --color-main-dark: #1d1d1d;
     --color-light-grey: #c0c0c0;
     --color-dark-grey: #424242;
     --color-main-black: #000;
@@ -12,7 +16,7 @@
     --border-radius-1: 0.2rem;
     --border-radius-2: 0.4rem;
 
-    --transition: all 150ms ease;
+    --transition: all 200ms ease;
 
 }
 *{
@@ -28,20 +32,29 @@
 }
 
 /*------------Navigation bar------------- */
-#col
-{
-    color: var(--color-danger);
-}
-
 a
 {
+    font-family: Poppins;
+    font-weight: 400;
     color: var(--color-main-white);
 }
 
 h1
 {
-    padding-left: 3rem;
+    padding-left: 2rem;
     padding-right: 2rem;
+}
+
+#col
+{
+    color: var(--color-danger);
+}
+#col, h1
+{
+    font-family: Poppins;
+    font-weight: 800;
+    font-style: italic;
+    font-size: 1.8rem;
 }
 
 nav
@@ -53,6 +66,7 @@ nav
     position: fixed;
     top: 0;
     z-index: 11;
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.1);
 }
 
 
@@ -66,18 +80,26 @@ nav
 .topnavbar
 {
     display: inline-block;
+    white-space: nowrap;
     gap: 2rem;
     padding-right: 2rem;
+}
+
+
+.topnavbar div > a
+{
+    /*center vehicule text and drop down icon */
 }
 
 .topnavbar a
 {
     border-bottom: 5px solid transparent;
+    align-items: center;
 }
 
 .navbar__container a
 {
-    padding: 1rem 1.5rem;
+    padding: 0.8rem 1.5rem;
 }
 
 .topnavbar .active
@@ -93,7 +115,14 @@ nav
     transition: var(--transition);
 }
 
+.material-symbols-outlined
+{
+    position: fixed;
+    transform: translateY(2px);
+}
+
 /*------------- DropDown button ------------------*/
+
 .dropdown
 {
     position: relative;
@@ -106,7 +135,7 @@ nav
     display: none;
     position: absolute;
     background-color: var(--color-main-white);
-    margin-top: 1.25rem;
+    margin-top: 1.1rem;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1);
     z-index: 10;
     border-bottom-right-radius: var(--border-radius-2);
@@ -117,11 +146,13 @@ nav
 {
     display: block;
     text-align: center;
-    padding: 1rem 2rem;
+    padding: 0.5rem 1.5rem;
     color: var(--color-main-dark);
+    font-size: 14px;
 }
 
 .dropdown:hover .dropdown-content
 {
     display: block;
 }
+
