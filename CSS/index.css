@@ -1,16 +1,18 @@
 :root
 {
     --color-main: #5b52ff;
+    --color-danger: #ec752f;
     --color-main-light: #9691ff;
     --color-main-white: #fff;
-    --color-main-dark: #2c2c2c;
-    --color-light-grey: #e9e9e9;
+    --color-main-dark: #252525;
+    --color-light-grey: #c0c0c0;
+    --color-dark-grey: #424242;
     --color-main-black: #000;
 
     --border-radius-1: 0.2rem;
     --border-radius-2: 0.4rem;
 
-    --transition: all 400ms ease;
+    --transition: all 150ms ease;
 
 }
 *{
@@ -25,23 +27,34 @@
     font-family: sans-serif;
 }
 
-/* Navigation bar */
+/*------------Navigation bar------------- */
+#col
+{
+    color: var(--color-danger);
+}
+
 a
 {
     color: var(--color-main-white);
 }
+
 h1
 {
-    color: var(--color-main-white);
+    padding-left: 3rem;
+    padding-right: 2rem;
 }
+
 nav
 {
     background-color: var(--color-main-dark);
     width: 100vw;
+    min-width: 45rem;
+    height: 3.6rem;
     position: fixed;
     top: 0;
     z-index: 11;
 }
+
 
 .navbar__container{
     height: 100%;
@@ -50,42 +63,65 @@ nav
     align-items: center;
 }
 
-.navMenu
+.topnavbar
 {
-    display: flex;
-    align-items: center;
-    padding: 1rem;
-    gap: 4rem;
+    display: inline-block;
+    gap: 2rem;
+    padding-right: 2rem;
 }
 
-.navMenu:hover
+.topnavbar a
 {
-    background-color: var(--color-main);
+    border-bottom: 5px solid transparent;
+}
+
+.navbar__container a
+{
+    padding: 1rem 1.5rem;
+}
+
+.topnavbar .active
+{
+    color: var(--color-danger);
+    border-bottom: 5px solid var(--color-danger);
+}
+
+.topnavbar a:hover
+{
+    color: var(--color-danger);
+    border-bottom: 5px solid var(--color-danger);
     transition: var(--transition);
 }
 
-
-/* DropDown button*/
-
-.dropMenu
+/*------------- DropDown button ------------------*/
+.dropdown
 {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content
+{
+    overflow: hidden;
     display: none;
     position: absolute;
+    background-color: var(--color-main-white);
+    margin-top: 1.25rem;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    border-bottom-right-radius: var(--border-radius-2);
+    border-bottom-left-radius: var(--border-radius-2);
 }
 
-.dropMenu ul
+.dropdown-content a
 {
     display: block;
-    position: relative;
+    text-align: center;
+    padding: 1rem 2rem;
+    color: var(--color-main-dark);
 }
 
-
-.navbar ul li:hover .dropMenu
+.dropdown:hover .dropdown-content
 {
     display: block;
-    margin-top: 1rem;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
-    transition: opacity 150ms ease-in-out;
-    z-index: 12;
 }
-
