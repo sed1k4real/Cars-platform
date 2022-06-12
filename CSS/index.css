@@ -31,7 +31,7 @@
 /*------------Navigation bar------------- */
 a
 {
-    font-family: Poppins;
+    /*font-family: Poppins;*/
     font-weight: 400;
     color: var(--color-main-white);
 }
@@ -48,7 +48,7 @@ h1
 }
 #col, h1
 {
-    font-family: Poppins;
+    /*font-family: Poppins;*/
     font-weight: 800;
     font-style: italic;
     font-size: 1.8rem;
@@ -118,12 +118,14 @@ nav
 {
     position: relative;
     display: inline-block;
+    width: 132.5px;
 }
 
-.dropdown a
+.dropdown  a
 {
     padding: 0.9rem 1.5rem;
 }
+
 .dropdown-content
 {
     overflow: hidden;
