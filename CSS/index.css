@@ -138,7 +138,7 @@ nav
     z-index: 10;
     border-bottom-right-radius: var(--border-radius-2);
     border-bottom-left-radius: var(--border-radius-2);
-    width: 140.5px;    /*Aligns drop down menu size with the "vehicles" TAb size*/
+    width: 140.5px;    /*Aligns drop down menu size with the "vehicles" TAb size after adding the "S" to "Vehicle"*/
 }
 
 .dropdown-content a
