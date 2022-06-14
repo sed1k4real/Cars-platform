@@ -1,0 +1,22 @@
+:root
+{
+    --color-main: #fff;
+}
+
+h2
+{
+    font-family: Poppins;
+    font-weight: 400;
+}
+.card
+{
+    float: left;
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+
+.card img
+{
+    height: 10rem;
+    width: 17.8rem;
+}

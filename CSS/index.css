@@ -25,13 +25,12 @@
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
-    font-family: sans-serif;
 }
 
 /*------------Navigation bar------------- */
 a
 {
-    /*font-family: Poppins;*/   /*Makes the nav bar flicker due to delay*/
+    font-family: Poppins;  /*Makes the nav bar flicker due to delay*/
     font-weight: 400;
     color: var(--color-main-white);
 }
@@ -48,7 +47,7 @@ h1
 }
 #col, h1
 {
-    /*font-family: Poppins;*/   /*Makes the nav bar flicker due to delay*/
+    font-family: Poppins;   /*Makes the nav bar flicker due to delay*/
     font-weight: 800;
     font-style: italic;
     font-size: 1.8rem;
@@ -109,8 +108,7 @@ nav
 .material-symbols-outlined
 {
     position: relative;
-    transform: translateY(7px);   
-    max-width: 24px;    /*Fixes the following : when clicking on the "vehicles" Tab the border width doubles for a second then goes back to normal*/
+    transform: translateY(7px);
 }
 
 /*------------- DropDown button ------------------*/
@@ -119,7 +117,6 @@ nav
 {
     position: relative;
     display: inline-block;
-    width: 132.5px;    /* Fixes the flickering of the navigation bar caused by the icon */
 }
 
 .dropdown  a
@@ -138,14 +135,13 @@ nav
     z-index: 10;
     border-bottom-right-radius: var(--border-radius-2);
     border-bottom-left-radius: var(--border-radius-2);
-    width: 140.5px;    /*Aligns drop down menu size with the "vehicles" TAb size after adding the "S" to "Vehicle"*/
 }
 
 .dropdown-content a
 {
     display: block;
     text-align: center;
-    padding: 0.8rem 2.25rem;
+    padding: 0.8rem 2.5rem;
     color: var(--color-main-dark);
     font-size: 14px;
 }
