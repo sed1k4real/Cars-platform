@@ -62,7 +62,7 @@ nav
     position: fixed;
     top: 0;
     z-index: 11;
-    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 8px 0 #0000001a;
 }
 
 
@@ -119,9 +119,9 @@ nav
     display: inline-block;
 }
 
-.dropdown  a
+.dropdown a
 {
-    padding: 0.9rem 1.5rem;
+    padding: 0.9rem 1.6rem;
 }
 
 .dropdown-content
@@ -141,9 +141,9 @@ nav
 {
     display: block;
     text-align: center;
-    padding: 0.8rem 2.5rem;
+    padding: 0.8rem 2.2rem;
     color: var(--color-main-dark);
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .dropdown:hover .dropdown-content

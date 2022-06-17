@@ -1,22 +1,67 @@
 :root
 {
-    --color-main: #fff;
+    --padding-1: 1rem;
+
+    --border-rad-1: 0.2rem;
+    --border-rad-2: 3rem;
 }
 
-h2
-{
+*{
     font-family: Poppins;
-    font-weight: 400;
 }
+/* ---------------- Card style ----------------*/
+.page-content
+{
+    margin-top: 5rem;
+    margin-left: 2rem;
+}
+
+.title
+{
+    font-size: 1rem;
+    font-weight: 300;
+}
+
 .card
 {
-    float: left;
-    margin-top: 2rem;
-    margin-left: 2rem;
+    display: inline-block;
+    padding-top: 2rem;
+    padding-right: var(--padding-1);
 }
 
 .card img
 {
-    height: 10rem;
-    width: 17.8rem;
+    width: 22rem;
+    height: 13rem;
+    object-fit: cover;
+    border-radius: var(--border-rad-1);
+}
+
+.card-body
+{   
+    font-family: Poppins;
+    color: white;
+    white-space: nowrap;
+    margin-top: -4.5rem;
+    margin-left: 1rem;
+}
+.card-body h2
+{
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+.card-body p 
+{
+    font-weight: 300;
+}
+
+section
+{
+    display: block;
+}
+
+.card:hover
+{
+    cursor: pointer;
 }

@@ -37,7 +37,7 @@
         {
             echo "<script>alert('Error')</script>";
         }
-        // keeo the user on the content answer page
+        // keep the user on the content answer page
         header('location: content_insert.php');
     }
 ?>
