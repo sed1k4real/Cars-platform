@@ -1,11 +1,10 @@
 <?php
     include('../config.php');
 
-    if(isset($_POST['upload']))
+    if(isset($_POST['update']))
     {
         $ID = $_POST['id'];
         $NAME = $_POST['name'];
-        //$CLASS = $_POST['class'];
 
         if(!empty($_POST['class'])) {
             $CLASS= $_POST['class'];
@@ -20,6 +19,7 @@
         // Storing path of the uploaded images
         $image_up = "images/".$image_name;
         
+        $MATR = $_POST['matr'];
         $PRICE = $_POST['price'];
         $ENGINE = $_POST['engine'];
         $DRIVE = $_POST['drive'];
@@ -28,23 +28,23 @@
         $ACCEL = $_POST['accel'];
         $CONTEXT = $_POST['context'];
 
-        // Insert data to the DB table parameter 
-        $insert = "INSERT INTO vehicules(id, name, class, img, price, engine, drive, seat, speed, accel, context) VALUES('$ID', '$NAME', '$CLASS', '$image_up', '$PRICE', '$ENGINE', '$DRIVE', '$SEAT', '$SPEED', '$ACCEL', '$CONTEXT')";
-        mysqli_query($con, $insert);
+        // Update data to the DB table parameter 
+        $update = "UPDATE $tbl_name SET id='$ID', name='$NAME', class='$CLASS', img='$image_up', price='$PRICE', engine='$ENGINE', drive='$DRIVE', seat='$SEAT', speed='$SPEED', accel='$ACCEL', context='$CONTEXT' WHERE matr = $MATR";
+        mysqli_query($con, $update);
 
         // Check if the image is on the correct path 
         if(move_uploaded_file($image_location, '../images/'.$image_name))
         {
             echo "<script LANGUAGE='JavaScript'>
-            window.location.href='content_insert.php';
-            alert('Added succesfully');
+            window.location.href='content_edit.php';
+            alert('Updated succesfully');
             </script>";
         }
         else
         {
             echo "<script LANGUAGE='JavaScript'>
-            window.alert('Failed to add');
-            window.location.href='content_insert.php';
+            window.alert('Failed to update');
+            window.location.href='content_edit.php';
             </script>";
         }
         mysqli_close($con);

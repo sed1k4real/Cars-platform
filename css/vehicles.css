@@ -1,22 +1,91 @@
 :root
 {
-    --color-main: #fff;
+    --padding-1: 1rem;
+    --border-rad-1: 0.2rem;
+    --border-rad-2: 3rem;
+    --transition:all 350ms ease;
+    --item-min-width: 20rem;
+    --item-max-width: 23rem;
+}
+
+*{
+    font-family: Poppins;
+}
+/* ---------------- Card style ----------------*/
+body
+{
+    margin-top: 5rem;
+}
+
+.main_container
+{
+    display: flex;
+    justify-content: space-around;
+}
+
+.page_content
+{
+    width: 95%;
+}
+
+.title
+{
+    margin-bottom: 1rem;
 }
 
 h2
 {
-    font-family: Poppins;
-    font-weight: 400;
+    font-size: 1.4rem;
+    font-weight: 600;
 }
+
 .card
 {
-    float: left;
-    margin-top: 2rem;
-    margin-left: 2rem;
+    transition: var(--transition);
 }
 
 .card img
 {
-    height: 10rem;
-    width: 17.8rem;
+    width: 100%;
+    object-fit: cover;
+    border-radius: var(--border-rad-1);
+    aspect-ratio: 16/9;
+}
+
+.card-body
+{   
+    font-family: Poppins;
+    color: rgb(0, 0, 0);
+    white-space: nowrap;
+    margin-top: -0.5rem;
+    text-align: center;
+    padding-top: 0.4rem;
+    padding-bottom: 1rem;
+}
+.card-body h2
+{
+    font-size: 1rem;
+    margin-bottom: 0.4;
+}
+
+.card-body p 
+{
+    font-weight: 300;
+}
+
+section
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    column-gap: 1.5rem;
+    justify-content: center;
+    justify-items: center;
+    transition: var(--transition);
+}
+
+.card:hover
+{
+    cursor: pointer;
+    transform: scale(1.05);
+    transition:var(--transition);
 }
