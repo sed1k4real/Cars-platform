@@ -1,5 +1,5 @@
 <?php
-    include('../config.php');
+    include('../../config/config.php');
 
     if(isset($_POST['update']))
     {
@@ -33,10 +33,10 @@
         mysqli_query($con, $update);
 
         // Check if the image is on the correct path 
-        if(move_uploaded_file($image_location, '../images/'.$image_name))
+        if(move_uploaded_file($image_location, '../../images/'.$image_name))
         {
             echo "<script LANGUAGE='JavaScript'>
-            window.location.href='content_edit.php';
+            window.location.href='../content_edit.php';
             alert('Updated succesfully');
             </script>";
         }
@@ -44,7 +44,7 @@
         {
             echo "<script LANGUAGE='JavaScript'>
             window.alert('Failed to update');
-            window.location.href='content_edit.php';
+            window.location.href='../content_edit.php';
             </script>";
         }
         mysqli_close($con);

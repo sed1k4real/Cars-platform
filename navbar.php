@@ -3,7 +3,7 @@
 <head>
 
     <!--Stylesheet-->
-    <link rel="stylesheet" type="text/css" href="css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="dist/css/main.css">
     <title>Navbar</title>
 </head>
 
@@ -12,9 +12,10 @@
     <?php $activePage = basename($_SERVER['PHP_SELF'], ".php"); ?>
     
     <nav>
-        <div class="container navbar__container">
-            <a href="index.php"><h1>DZ<span id="col">CREW</span></h1></a>
-            <div class="topnavbar">
+        <div class="navbar">
+            <a class ="navbar__logo" href="index.php"><h1>DZ<span id="col">CREW</span></h1></a>
+            
+            <div class="navbar__container">
                 <a class="<?= ($activePage == 'index') ? 'active':''; ?>" href="index.php">Home</a>
                 <a class="<?= ($activePage == 'news') ? 'active':''; ?>" href="news.php">News</a>
                 <div class="dropdown">

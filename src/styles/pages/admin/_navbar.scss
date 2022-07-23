@@ -1,0 +1,128 @@
+@use '../../abstracts/variables' as v;
+@use '../../base/palette' as p;
+
+.material-symbols-sharp {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 200,
+  'GRAD' 200,
+  'opsz' 48
+}
+
+//------------ admin nav bar -------------
+
+/*body
+{
+    display: grid;
+    grid-template-columns: v.$nav-width auto;
+    background-color: p.$color-secondary;
+
+    &:nth-child(1)
+    {
+        background-color: aquamarine;
+        /*width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}*/
+
+
+aside
+{
+    position: sticky;
+    float: left;
+    height: 100vh;
+
+    box-shadow: 0.5rem 0 0.5rem 0 #0000001a;
+}
+
+.active
+{
+    border-right: 4px solid p.$color-primary;
+    span, h3
+    {
+            color: p.$color-primary;
+    }
+}
+
+#col
+{
+    color: p.$color-primary;
+}
+
+
+.navbar
+{
+    background-color: p.$color-dark;
+    height: 100vh;
+    width: v.$nav-width;
+    position: fixed;
+
+    display: grid;
+    grid-template-rows: fit-content(100%) auto;
+
+    &__logo
+    {
+        margin-top: 1rem;
+    }
+
+    a
+    {
+        color: p.$color-secondary;
+        padding-left: 2rem;
+        display: flex;
+        align-items: center;
+    }
+
+    h1
+    {
+        font-style: italic;
+        margin-bottom: 0.4rem;
+    }
+
+    h3
+    {
+        padding-left: 0.8rem;
+        font-family: Poppins;
+        font-weight: 300;
+        font-size: 0.9rem;
+    }
+
+}
+
+.navbar__panel
+{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    a
+    {
+        padding-top: 0.9em;
+        padding-bottom: 0.9rem;
+        &:hover
+            {
+                color: p.$color-primary;
+                background-color: v.$color-main-dark;
+                transition: v.$transition-0;
+            }
+    }
+}
+
+.dropdown__droplist
+{
+    display: none;
+
+    a
+    {
+        padding-left: 3rem;
+    }
+}
+
+.extended
+{
+    display: block;
+}
+
+//------------- End of admin nav bar ---------------

@@ -1,0 +1,9 @@
+@use '../abstracts/variables' as v;
+@use '../base/palette' as p;
+
+body
+{
+    display: grid;
+    grid-template-columns: v.$nav-width auto;
+    background-color: p.$color-secondary;
+}

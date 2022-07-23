@@ -1,0 +1,10 @@
+//set a palette of colors for every theme in the website both dark and white modes
+@use '../abstracts/variables' as v;
+
+$color-primary: v.$color-orange; // main orange
+$color-secondary: v.$color-main-white; // white
+$color-dark: v.$color-main-dark-grey; // dark grey
+$color-black: v.$color-main-black; // black
+
+$color-grey: v.$color-main-grey-light-1;
+$color-grey-light: v.$color-main-grey-light-2;

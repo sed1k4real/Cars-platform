@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!------links------>
-    <link rel="stylesheet" href="../css/admin/update.css">
+    <link rel="stylesheet" href="../styles/admin/update.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,800;1,800&display=swap" rel="stylesheet">
     <title>Update vehicles</title>
@@ -14,7 +14,7 @@
 
     <?php
         include 'admin_navbar.php'; 
-        include ('../config.php');
+        include ('../config/config.php');
 
         $matr = $_GET['id'];
         $update = mysqli_query($con, "SELECT * FROM $tbl_name WHERE matr = $matr");
@@ -22,11 +22,11 @@
     ?>
 
     <div class="main">
-        <form action = "up.php" method="POST" enctype="multipart/form-data" >        
+        <form action = "config/up.php" method="POST" enctype="multipart/form-data" >        
             <h2>Update vehicles</h2>
-            <div class="container_form">
-
-                        <div class="cell">
+            <div class="form">
+                <div class="form__container">
+                        <div class="cell__hidden">
                             <label for="matr">Matr *</label><br>
                             <input type="number" name="matr" placeholder="Matricule" value='<?php echo $data['matr']?>' required><br>
                         </div>
@@ -88,6 +88,7 @@
                             <label for="context">Context *</label><br>
                             <textarea type="text" name="context" placeholder="Context" required><?php echo $data['context']?></textarea><br>
                         </div>
+                    </div>
             </div>
 
             <div id="file-up">

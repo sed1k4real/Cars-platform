@@ -1,0 +1,143 @@
+@use '../../abstracts/variables' as v;
+@use '../../base/palette' as p;
+/*----------------- settings -----------------*/
+.settings
+{
+    margin-top: 1rem;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+
+    &__container
+    {
+        button
+        {   
+            background-color: v.$color-main-grey-light-0;
+            padding: 0.8rem;
+            border-radius: v.$border-rad-1;
+            margin-top: 1rem;
+            width: 10%;
+            min-width: 6rem;
+
+            &:hover
+            {
+                cursor: pointer;
+            }
+        }
+
+        &__form
+        {
+            margin-top: 0.8rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 2rem;
+            row-gap: 0.8rem;
+            &__profile
+            {
+                .cell:last-child
+                {
+                    grid-column: span 2;
+                }
+            }
+
+            textarea
+            {
+                min-height: 4rem;
+            }
+            label
+            {
+                font-size: 0.8rem;
+                font-weight: 400;
+            }
+            input, textarea
+            {
+                font-family: Poppins;
+                padding: 0.6rem;
+                width: 100%;
+                border: 2px solid transparent;
+                border-radius: v.$border-rad-0;
+        
+                &:focus
+                {
+                    border: 2px solid p.$color-primary;
+                    color: p.$color-primary;
+                }
+            }
+        }
+
+        &__ctabtn
+        {
+            .update
+            {
+                background-color: p.$color-primary;
+                color: p.$color-secondary;
+                margin-right: 1rem;
+            }
+        }
+        hr
+        {
+            height: 1px;
+            background-color: v.$color-main-grey-light-0;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        &__appearance
+        {
+            input
+            {
+                height: 1.4rem;
+                width: 1.4rem;
+                border-radius: 2rem;
+                
+                &:hover
+                {
+                    cursor: pointer;
+                    background-color: v.$color-main-grey;
+                }
+
+                &:checked
+                {
+                    background-color: p.$color-primary;
+                }
+            }
+            label
+            {
+                font-size: 1rem;
+            }
+
+            &__options
+            {
+                display: flex;
+                align-items: center;
+                margin-bottom: 2rem;
+
+                label
+                {
+                    padding-left: 0.4rem;
+                    padding-right: 4rem;
+                }
+
+                .checkmark::after
+                {
+                    content: "";
+                    position: absolute;
+                    display: block;
+                }
+            }
+
+            h3
+            {
+                font-size: 1.2rem;
+                color: p.$color-grey;
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+
+    
+}

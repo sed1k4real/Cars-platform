@@ -1,0 +1,24 @@
+@use '../base/reset';
+
+body
+{
+    margin-top: 5rem;
+}
+
+.container
+{
+    display: flex;
+    justify-content: space-around;
+}
+
+h2
+{
+    padding-bottom: 0.4rem;
+}
+
+.mainPage
+{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 70%;
+}

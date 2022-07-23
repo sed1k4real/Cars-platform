@@ -1,5 +1,5 @@
 <?php
-    include('../config.php');
+    include('../../config/config.php');
 
     if(isset($_POST['upload']))
     {
@@ -33,10 +33,10 @@
         mysqli_query($con, $insert);
 
         // Check if the image is on the correct path 
-        if(move_uploaded_file($image_location, '../images/'.$image_name))
+        if(move_uploaded_file($image_location, '../../images/'.$image_name))
         {
             echo "<script LANGUAGE='JavaScript'>
-            window.location.href='content_insert.php';
+            window.location.href='../content_insert.php';
             alert('Added succesfully');
             </script>";
         }
@@ -44,8 +44,8 @@
         {
             echo "<script LANGUAGE='JavaScript'>
             window.alert('Failed to add');
-            window.location.href='content_insert.php';
             </script>";
+            //window.location.href='../content_insert.php';
         }
         mysqli_close($con);
     }

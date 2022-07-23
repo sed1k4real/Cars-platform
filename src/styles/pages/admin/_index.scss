@@ -1,0 +1,109 @@
+@use '../../abstracts/variables' as v;
+@use '../../base/palette' as p;
+
+.insights
+{   
+    margin-top: 1rem;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+
+    &__title
+    {
+        margin-bottom: 1rem;
+    }
+
+    &__container
+    {
+        
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        row-gap: 1rem;
+        column-gap: 1rem;
+
+        .material-symbols-sharp
+        {
+            padding: 0.6rem;
+            margin-right: 0.4rem;
+            margin-bottom: 0.4rem;
+            border-radius: v.$border-rad-3;
+            background-color: p.$color-grey;
+            color: v.$color-main-white;
+        }
+        &__block
+        {
+            grid-column: span 2;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            background-color: p.$color-dark;
+            border-radius: v.$border-rad-2;
+            &__elements
+            {   
+                display: flex;
+                flex-direction: column;
+                justify-content: left;
+                align-items: baseline;
+                padding: 1.6rem;
+                color: p.$color-secondary;
+
+                h2
+                {
+                    font-size: 1.4rem;
+                }
+                p
+                {
+                    font-size: 0.8rem;
+                }
+                .material-symbols-sharp
+                {
+                    background-color: p.$color-primary;
+                    color: v.$color-main-white;
+                }
+
+                &__item
+                {
+                    display: flex;
+                }
+            }
+        }
+
+        &__previewer
+        {
+            grid-row: span 3;
+            background-color: p.$color-grey-light;
+            border-radius: v.$border-rad-2;
+
+            padding: 1.6rem;
+            &__elements
+            {
+                margin-top: 0.4rem;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+
+        &__cards
+        {
+            display: flex;
+            flex-direction: column;
+            justify-content: left;
+            align-items: baseline;
+            padding: 1.6rem;
+            background-color: p.$color-grey-light;
+            border-radius: v.$border-rad-2;
+            h3
+            {
+                font-size: 1rem;
+            }
+            
+            p{
+                font-size: 0.8rem;
+                color: p.$color-grey;
+            }
+            
+        }
+    }
+}
