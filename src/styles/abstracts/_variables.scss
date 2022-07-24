@@ -4,9 +4,9 @@ $color-danger: #e2413c; //Red
 $color-alert: #FFD300; //Yellow
 $color-success: #00A86B; //Green
 $color-main-grey: #969696; // grey shades
-$color-main-grey-light-0: #c0c0c0;
+$color-main-grey-light-0: #d4d4d4;
 $color-main-grey-light-1: #424242;
-$color-main-grey-light-2: #e4e4e4;
+$color-main-grey-light-2: #f1f1f1;
 $color-main-dark-grey: #1D1D1D;
 $color-main-dark: #121212;
 $color-main-black: #000;
@@ -22,8 +22,8 @@ $border-rad-3: 2rem;
 $nav-width: 13rem;
 
 //transitions
-$transition-0: all 250ms ease;
-$transition-1: all 500ms ease;
+$transition-0: all 250ms ease-in-out;
+$transition-1: all 500ms ease-in-out;
 
 //thumbnail max width
 $thumbnail-max-width: 5rem;

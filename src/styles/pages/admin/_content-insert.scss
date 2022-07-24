@@ -67,9 +67,9 @@ form
         width: 100%;
         padding-left: 0.5rem;
         height: 2.5rem;
-        background-color: p.$color-grey-light;
+        background-color: p.$color-secondary;
         color: p.$color-grey;
-        border-radius: v.$border-rad-0;
+        border-radius: v.$border-rad-1;
     }
     
     .cell
@@ -89,8 +89,6 @@ form
         font-size: 14px;
         font-weight: 300;
         margin-bottom: 1rem;
-        
-        height: 2.4rem;
     }
 
     textarea
@@ -109,11 +107,10 @@ form
 }
 input, textarea
     {
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
+        padding: 0.6rem;
 
-        background-color: p.$color-grey-light;
-        border-radius: v.$border-rad-0;
+        background-color: p.$color-secondary;
+        border-radius: v.$border-rad-1;
 
         &:focus
         {

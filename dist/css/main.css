@@ -54,7 +54,7 @@ nav {
 .navbar__container a:hover {
   color: #ec752f;
   border-bottom: 5px solid #ec752f;
-  transition: all 250ms ease;
+  transition: all 250ms ease-in-out;
 }
 .navbar__container .active {
   color: #ec752f;
@@ -169,11 +169,11 @@ section {
   column-gap: 1.5rem;
   justify-content: center;
   justify-items: center;
-  transition: all 500ms ease;
+  transition: all 500ms ease-in-out;
 }
 
 .card {
-  transition: all 250ms ease;
+  transition: all 250ms ease-in-out;
 }
 .card__image {
   width: 100%;
@@ -184,7 +184,7 @@ section {
 .card:hover {
   cursor: pointer;
   transform: scale(1.05);
-  transition: all 500ms ease;
+  transition: all 500ms ease-in-out;
 }
 .card__body {
   font-family: Poppins;

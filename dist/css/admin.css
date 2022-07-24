@@ -43,30 +43,17 @@ body {
   font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 200, "opsz" 48;
 }
 
-/*body
-{
-    display: grid;
-    grid-template-columns: v.$nav-width auto;
-    background-color: p.$color-secondary;
+body {
+  background-color: #f1f1f1;
+}
 
-    &:nth-child(1)
-    {
-        background-color: aquamarine;
-        /*width: 95%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}*/
 aside {
   position: sticky;
   float: left;
   height: 100vh;
-  box-shadow: 0.5rem 0 0.5rem 0 rgba(0, 0, 0, 0.1019607843);
+  box-shadow: 0.5rem 0 0.5rem 0 rgba(0, 0, 0, 0.102);
 }
 
-.active {
-  border-right: 4px solid #ec752f;
-}
 .active span, .active h3 {
   color: #ec752f;
 }
@@ -102,20 +89,18 @@ aside {
   font-weight: 300;
   font-size: 0.9rem;
 }
-
 .navbar__panel {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 .navbar__panel a {
-  padding-top: 0.9em;
-  padding-bottom: 0.9rem;
+  padding-top: 1em;
+  padding-bottom: 1rem;
 }
 .navbar__panel a:hover {
   color: #ec752f;
-  background-color: #121212;
-  transition: all 250ms ease;
+  transition: all 250ms ease-in-out;
 }
 
 .dropdown__droplist {
@@ -144,6 +129,7 @@ aside {
   grid-template-rows: repeat(3, 1fr);
   row-gap: 1rem;
   column-gap: 1rem;
+  margin-bottom: 1rem;
 }
 .insights__container .material-symbols-sharp {
   padding: 0.6rem;
@@ -153,10 +139,13 @@ aside {
   background-color: #424242;
   color: #fff;
 }
+.insights__container .material-symbols-sharpicon--income {
+  background-color: #00A86B;
+}
 .insights__container__block {
   grid-column: span 2;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   background-color: #1D1D1D;
   border-radius: 1rem;
 }
@@ -183,23 +172,39 @@ aside {
 }
 .insights__container__previewer {
   grid-row: span 3;
-  background-color: #e4e4e4;
+  background-color: #fff;
   border-radius: 1rem;
   padding: 1.6rem;
 }
-.insights__container__previewer__elements {
-  margin-top: 0.4rem;
+.insights__container__previewer__block {
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  row-gap: 1.4rem;
+  margin-bottom: 1.4rem;
+}
+.insights__container__previewer__block__element {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.insights__container__previewer__block__element__item {
+  margin-left: 1rem;
+  text-align: end;
+}
+.insights__container__previewer__block__element p {
+  font-size: 0.8rem;
+}
+.insights__container__previewer__title {
+  margin-bottom: 1.4rem;
 }
 .insights__container__cards {
   display: flex;
   flex-direction: column;
   justify-content: left;
   align-items: baseline;
+  width: 100%;
   padding: 1.6rem;
-  background-color: #e4e4e4;
+  background-color: #fff;
   border-radius: 1rem;
 }
 .insights__container__cards h3 {
@@ -208,6 +213,21 @@ aside {
 .insights__container__cards p {
   font-size: 0.8rem;
   color: #424242;
+}
+.insights__container__cards:hover {
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.05);
+  transition: all 250ms ease-in-out;
+  transform: scale(1.03);
+  cursor: pointer;
+  /*p, h2, h3
+  {
+      color: p.$color-secondary;
+  }
+  .material-symbols-sharp
+  {
+      background-color: p.$color-primary;
+      transition: v.$transition-0;
+  }*/
 }
 
 /*-------------------content insert-------------------*/
@@ -220,7 +240,7 @@ form {
 form a {
   font-size: 14px;
   font-weight: 300;
-  color: #e4e4e4;
+  color: #f1f1f1;
 }
 form h2 {
   margin-bottom: 2rem;
@@ -258,9 +278,9 @@ form button:hover {
   width: 100%;
   padding-left: 0.5rem;
   height: 2.5rem;
-  background-color: #e4e4e4;
+  background-color: #fff;
   color: #424242;
-  border-radius: 0.2rem;
+  border-radius: 0.4rem;
 }
 .form__container .cell__hidden {
   display: none;
@@ -272,7 +292,6 @@ form button:hover {
   font-size: 14px;
   font-weight: 300;
   margin-bottom: 1rem;
-  height: 2.4rem;
 }
 .form__container textarea {
   padding-top: 0.5rem;
@@ -286,10 +305,9 @@ form button:hover {
 }
 
 input, textarea {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  background-color: #e4e4e4;
-  border-radius: 0.2rem;
+  padding: 0.6rem;
+  background-color: #fff;
+  border-radius: 0.4rem;
 }
 input:focus, textarea:focus {
   border: 2px solid #ec752f;
@@ -324,11 +342,15 @@ input:focus, textarea:focus {
   grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
   column-gap: 2rem;
   row-gap: 2rem;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 0.4rem;
 }
 .content__card img {
   width: 100%;
   aspect-ratio: 16/9;
   object-fit: cover;
+  border-radius: 0.2rem;
 }
 .content__card h2 {
   margin-top: 0.4rem;
@@ -357,7 +379,7 @@ input:focus, textarea:focus {
 }
 
 .edit {
-  background-color: #e4e4e4;
+  background-color: #f1f1f1;
   color: #000;
 }
 
@@ -375,7 +397,7 @@ input:focus, textarea:focus {
   margin-right: auto;
 }
 .settings__container button {
-  background-color: #c0c0c0;
+  background-color: #d4d4d4;
   padding: 0.8rem;
   border-radius: 0.4rem;
   margin-top: 1rem;
@@ -392,7 +414,7 @@ input:focus, textarea:focus {
   column-gap: 2rem;
   row-gap: 0.8rem;
 }
-.settings__container__form__profile .cell:last-child {
+.settings__container__form --profile .cell:last-child {
   grid-column: span 2;
 }
 .settings__container__form textarea {
@@ -407,7 +429,7 @@ input:focus, textarea:focus {
   padding: 0.6rem;
   width: 100%;
   border: 2px solid transparent;
-  border-radius: 0.2rem;
+  border-radius: 0.4rem;
 }
 .settings__container__form input:focus, .settings__container__form textarea:focus {
   border: 2px solid #ec752f;
@@ -420,7 +442,7 @@ input:focus, textarea:focus {
 }
 .settings__container hr {
   height: 1px;
-  background-color: #c0c0c0;
+  background-color: #d4d4d4;
   width: 50%;
   margin-left: auto;
   margin-right: auto;

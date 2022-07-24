@@ -10,35 +10,21 @@
 }
 
 //------------ admin nav bar -------------
-
-/*body
+body
 {
-    display: grid;
-    grid-template-columns: v.$nav-width auto;
-    background-color: p.$color-secondary;
-
-    &:nth-child(1)
-    {
-        background-color: aquamarine;
-        /*width: 95%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}*/
-
-
+    background-color: p.$color-grey-light;
+}
 aside
 {
     position: sticky;
     float: left;
     height: 100vh;
 
-    box-shadow: 0.5rem 0 0.5rem 0 #0000001a;
+    box-shadow: 0.5rem 0 0.5rem 0 rgba(0, 0, 0, 0.102);
 }
 
 .active
 {
-    border-right: 4px solid p.$color-primary;
     span, h3
     {
             color: p.$color-primary;
@@ -49,7 +35,6 @@ aside
 {
     color: p.$color-primary;
 }
-
 
 .navbar
 {
@@ -88,25 +73,23 @@ aside
         font-size: 0.9rem;
     }
 
-}
-
-.navbar__panel
-{
-    display: flex;
-    flex-direction: column;
-
-    justify-content: space-between;
-
-    a
+    &__panel
     {
-        padding-top: 0.9em;
-        padding-bottom: 0.9rem;
-        &:hover
-            {
-                color: p.$color-primary;
-                background-color: v.$color-main-dark;
-                transition: v.$transition-0;
-            }
+        display: flex;
+        flex-direction: column;
+
+        justify-content: space-between;
+
+        a
+        {
+            padding-top: 1em;
+            padding-bottom: 1rem;
+            &:hover
+                {
+                    color: p.$color-primary;
+                    transition: v.$transition-0;
+                }
+        }
     }
 }
 

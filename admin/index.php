@@ -32,16 +32,55 @@
                     <h2>150</h2>
                     <p>Per day</p>
                 </div>
+                <div class="insights__container__block__elements">
+                    <span class="material-symbols-sharp">workspace_premium</span>
+                    <p>Offers</p>
+                    <h2>32</h2>
+                    <p>Per day</p>
+                </div>
             </div>
 
             <div class="insights__container__previewer">
-                <h2>Sales revenue</h2>
-                <div class="insights__container__previewer__elements">
-                    <span class="material-symbols-sharp">equalizer</span>
-                    <div class="insights__container__previewer__elements__item">
-                        <h2>245000$</h2>
-                        <p>Per month</p>
+                <h2 class="insights__container__previewer__title">Quick insights</h2>
+                <div class="insights__container__previewer__block">
+                    <div class="insights__container__previewer__block__element">
+                        <span class="material-symbols-sharp icon--income">show_chart</span>
+                        <div class="insights__container__previewer__block__element__item">
+                            <h2>245000$</h2>
+                            <p>Per week</p>
+                        </div>
                     </div>
+                    <div class="insights__container__previewer__block__element">
+                        <span class="material-symbols-sharp">shopping_cart</span>
+                        <div class="insights__container__previewer__block__element__item">
+                            <h2>98000$</h2>
+                            <p>Per month</p>
+                        </div>
+                    </div>
+                    <div class="insights__container__previewer__block__element">
+                        <span class="material-symbols-sharp">work_history</span>
+                        <div class="insights__container__previewer__block__element__item">
+                            <h2>32</h2>
+                            <p>Per hour</p>
+                        </div>
+                    </div>
+                    <div class="insights__container__previewer__block__element">
+                        <span class="material-symbols-sharp">monetization_on</span>
+                        <div class="insights__container__previewer__block__element__item">
+                            <h2>35000$</h2>
+                            <p>Per day</p>
+                        </div>
+                    </div>
+                    <div class="insights__container__previewer__block__element">
+                        <span class="material-symbols-sharp">equalizer</span>
+                        <div class="insights__container__previewer__block__element__item">
+                            <h2>245000$</h2>
+                            <p>Per month</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="insights__container__previewer__block__element">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed felis ultrices, fermentum urna consectetur, lobortis risus. Pellentesque id pellentesque lectus.</p>
                 </div>
             </div>
             <div class="insights__container__cards">
@@ -62,7 +101,15 @@
                 <p>Total profit today</p>
                 <h2>125000$</h2>
             </div>
+            <div class="insights__container__cards">
+                <span class="material-symbols-sharp">show_chart</span>
+                <h3>Profit</h3>
+                <p>Total profit today</p>
+                <h2>125000$</h2>
+            </div>
         </div>
     </div>
+
+    <hr>
 </body>
 </html>

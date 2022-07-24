@@ -32,14 +32,13 @@
             grid-template-columns: repeat(2, 1fr);
             column-gap: 2rem;
             row-gap: 0.8rem;
-            &__profile
+            --profile
             {
                 .cell:last-child
                 {
                     grid-column: span 2;
                 }
             }
-
             textarea
             {
                 min-height: 4rem;
@@ -55,7 +54,7 @@
                 padding: 0.6rem;
                 width: 100%;
                 border: 2px solid transparent;
-                border-radius: v.$border-rad-0;
+                border-radius: v.$border-rad-1;
         
                 &:focus
                 {

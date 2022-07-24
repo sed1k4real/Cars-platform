@@ -29,16 +29,22 @@
         
         column-gap: 2rem;
         row-gap: 2rem;
+
+        background-color: p.$color-secondary;
+        padding: 1rem;
+        border-radius: v.$border-rad-1;
     }
     
     &__card
-    {
+    {        
+        //box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.05);
     
         img
         {
             width: 100%;
             aspect-ratio: 16/9;
             object-fit: cover;
+            border-radius: v.$border-rad-0;
         }
     
         h2
