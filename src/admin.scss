@@ -1,6 +1,7 @@
 @use 'styles/base/reset';
 @use 'styles/layout/navigation';
 @use 'styles/pages/admin/navbar';
+@use 'styles/abstracts/toast';
 @use 'styles/pages/admin/index';
 @use 'styles/pages/admin/content-insert';
 @use 'styles/pages/admin/content-edit';

@@ -39,7 +39,6 @@
                     <p>Per day</p>
                 </div>
             </div>
-
             <div class="insights__container__previewer">
                 <h2 class="insights__container__previewer__title">Quick insights</h2>
                 <div class="insights__container__previewer__block">
@@ -99,7 +98,7 @@
                 <span class="material-symbols-sharp">show_chart</span>
                 <h3>Profit</h3>
                 <p>Total profit today</p>
-                <h2>125000$</h2>
+                <h2>19700$</h2>
             </div>
             <div class="insights__container__cards">
                 <span class="material-symbols-sharp">show_chart</span>

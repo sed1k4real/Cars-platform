@@ -1,14 +1,5 @@
 @use '../../abstracts/variables' as v;
 @use '../../base/palette' as p;
-
-.material-symbols-sharp {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 200,
-  'GRAD' 200,
-  'opsz' 48
-}
-
 //------------ admin nav bar -------------
 body
 {
@@ -21,6 +12,7 @@ aside
     height: 100vh;
 
     box-shadow: 0.5rem 0 0.5rem 0 rgba(0, 0, 0, 0.102);
+    grid-row: span 2;
 }
 
 .active

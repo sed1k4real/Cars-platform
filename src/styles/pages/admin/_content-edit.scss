@@ -6,21 +6,16 @@
     &__container
     {
         margin-top: 1rem;
-        width: 95%;
-        margin-left: auto;
-        margin-right: auto;
+        //width: 95%;
+        margin-left: 2rem;
+        margin-right: 2rem;
 
         margin-bottom: 2rem;
     }
 
     &__title
     {
-        margin-bottom: 2rem;
-    
-        width: fit-content;
-        margin-left: auto;
-        margin-right: auto;
-        
+        margin-bottom: 1rem;
     }
     &__page
     {
@@ -29,9 +24,6 @@
         
         column-gap: 2rem;
         row-gap: 2rem;
-
-        background-color: p.$color-secondary;
-        padding: 1rem;
         border-radius: v.$border-rad-1;
     }
     
@@ -86,10 +78,12 @@
 }
 
 
+
 .edit
 {
-    background-color: p.$color-grey-light;
+    background-color: p.$color-secondary;
     color: p.$color-black;
+    box-shadow: 0 5px 7px rgba(0, 0, 0, 0.05);
 }
 
 .delete

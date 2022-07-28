@@ -1,22 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Stylesheet-->
     <link rel="stylesheet" type="text/css" href="../dist/css/admin.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,800;1,800&display=swap" rel="stylesheet">
-    <title>Navbar</title>
 </head>
 <body>
     <?php $activePage = basename($_SERVER['PHP_SELF'], ".php"); ?>
     
     <aside>
         <div class="navbar">            
-            <a id="logo" class="navbar__logo" href="index.php"><h1>DZ<span id="col">CREW</span></h1></a>
+            <!--<a id="logo" class="navbar__logo" href="index.php"><h1>DZ<span id="col">CREW</span></h1></a>-->
             <div class="navbar__panel">
                 <div class="navbar__panel__container">
                     <a class="<?= ($activePage == 'index') ? 'active':''; ?>" href="index.php">

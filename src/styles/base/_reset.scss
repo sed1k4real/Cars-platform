@@ -2,6 +2,7 @@
 @use './font-face' as f;
 @use './type' as t;
 @use './palette' as p;
+@use '../abstracts/variables' as v;
 
 *{
     margin: 0;
@@ -12,4 +13,27 @@
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
+}
+.material-symbols-sharp 
+{
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 200,
+    'GRAD' 200,
+    'opsz' 48
+}  
+::-webkit-scrollbar
+{
+    width: 8px;
+    height: 8px;
+    &-track
+    {
+        background-color: p.$color-secondary;
+    }
+
+    &-thumb
+    {
+        background-color: p.$color-primary;
+        border-radius: v.$border-rad-1;
+    }
 }
