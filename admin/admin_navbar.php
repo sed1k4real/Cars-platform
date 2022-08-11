@@ -9,7 +9,7 @@
     
     <aside>
         <div class="navbar">            
-            <!--<a id="logo" class="navbar__logo" href="index.php"><h1>DZ<span id="col">CREW</span></h1></a>-->
+            <a id="logo" class="navbar__logo" href="index.php"><h1>DZ<span id="col">CREW</span></h1></a>
             <div class="navbar__panel">
                 <div class="navbar__panel__container">
                     <a class="<?= ($activePage == 'index') ? 'active':''; ?>" href="index.php">

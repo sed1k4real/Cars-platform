@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,800;1,800&display=swap);
-@import url(https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200); /*------------Navigation bar------------- */
+@import url(https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200);
+/*------------Navigation bar------------- */
 a {
   font-weight: 400;
   color: #fff;
@@ -98,10 +99,6 @@ nav {
 }
 
 /*------------ End of nav bar ------------*/
-body {
-  font-family: "Poppins", sans-serif;
-}
-
 h1, h2, h3, p {
   margin-top: 0;
 }
@@ -130,6 +127,7 @@ h3 {
   text-decoration: none;
   list-style: none;
   box-sizing: border-box;
+  font-family: Poppins;
 }
 
 .material-symbols-sharp {

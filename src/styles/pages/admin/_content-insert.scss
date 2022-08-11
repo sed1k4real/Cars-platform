@@ -60,15 +60,12 @@ form
     grid-template-columns: repeat(3, 1fr);
     column-gap: 1rem;
 
-    
-    select, option
+    option
     {
         width: 100%;
         padding-left: 0.5rem;
-        height: 2.5rem;
         background-color: p.$color-secondary;
         color: p.$color-grey;
-        border-radius: v.$border-rad-1;
     }
     
     .cell
@@ -83,40 +80,32 @@ form
         }
     }
     
-    input
-    {
-        font-size: 14px;
-        font-weight: 300;
-        margin-bottom: 1rem;
-    }
-
-    textarea
-    {
-        padding-top: 0.5rem;
-        margin-bottom: 1rem;
-
-        min-height: 6rem;
-    }
-    input, textarea
-    {
-        border: 2px solid transparent;
-        width: 100%;
-        font-family: Poppins;
-    }
-}
-input, textarea
+    .input
     {
         padding: 0.6rem;
-
+        width: 100%;
         background-color: p.$color-secondary;
         border-radius: v.$border-rad-1;
-
+        border: 2px solid transparent;
+        margin-bottom: 1rem;
         &:focus
         {
             border: 2px solid p.$color-primary;
         }
     }
 
+    input, select
+    {
+        font-size: 14px;
+        font-weight: 300;
+    }
+
+    textarea
+    {
+        padding-top: 0.5rem;
+        min-height: 6rem;
+    }
+}
 
 #file-up
 {

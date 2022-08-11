@@ -1,5 +1,5 @@
 const DEFAULT_OPTIONS =  {
-    autoClose: false,
+    autoClose: 5000,
     closeOnClick: true
 }
 export default class toast
@@ -42,20 +42,16 @@ export default class toast
     //this function contains errors 
     set closeOnClick(value)
     {
-        console.log(value)
         if(value){ this.#toastElement.addEventListener("click", () => {this.remove()}) }
         else { this.#toastElement.removerEventListener("click", () => {this.remove()}) }
     }
-    /*---------update function---------*/
-    //update(options){Object.entries({...options}).forEach(([key, value]) => {this[key] = value})}
     /*---------remove function---------*/
     remove()
     {
         const container = this.#toastElement.parentElement
         this.#toastElement.classList.remove("show")
-        this.#toastElement.addEventListener("transitionend", () => {
-            this.#toastElement.remove()
-        })
+        this.#toastElement.addEventListener("transitionend", () => { this.#toastElement.remove()})
+
         if(container.hasChildNodes()) return
         container.remove()
     }
@@ -64,7 +60,6 @@ export default class toast
 //createContainer function works perfectly 
 function createContainer()
 {
-    console.log("here")
     const container = document.createElement("div")
     container.classList.add("toast__container")
 

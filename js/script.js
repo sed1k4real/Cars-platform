@@ -1,13 +1,8 @@
-import toast from "./toast.js";
-
-/*const Toast = new toast({text: "Success" ,status: "success"})
-const Toast1 = new toast({text: "Alert: missing infos" ,status: "alert"})
-const Toast2 = new toast({text: "Error: missing infos" ,status: "failed"})
-*/
-setTimeout(() => {new toast({text: "Success" ,status: "success",})}, 500)
-setTimeout(() => {new toast({text: "Alert: missing infos" ,status: "alert"})}, 1500)
-setTimeout(() => {new toast({text: "Error: missing infos" ,status: "failed"})}, 2000)
-setTimeout(() => {new toast({text: "🦄 Good to cya again!"})}, 2500)
-
-//const tclick = document.querySelector(".toast")
-//tclick.addEventListener("click", closeOnClick(true))
+import toast from "./toast.js"
+// toast attribute text("Lorem ipsum"), status(success, failed, alert), autoclose(1000ms, true, false), closeOnclick(true, false)
+if(sessionStorage.getItem('notification'))
+{
+    let notif = sessionStorage.getItem('notification');
+    let notify = Function(notif)
+    notif = sessionStorage.removeItem('notification')
+}
