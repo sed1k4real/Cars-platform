@@ -5,19 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!------links------>
-    <link rel="stylesheet" href="../styles/admin/update.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,800;1,800&display=swap" rel="stylesheet">
     <title>Update vehicles</title>
 </head>
 <body>
-
     <?php
         include 'admin_navbar.php'; 
         include ('../config/config.php');
 
         // fetch data from DB to rows
-        $MATR = $_GET['id'];
+        $MATR = $_GET['id']; //should add filter
         $query_fetch = mysqli_query($con, "SELECT * FROM $tbl_name WHERE MATR = $MATR");
         $data = mysqli_fetch_array($query_fetch);
 
@@ -46,8 +44,6 @@
             if(!empty($_FILES['image']['name']))
             {
                 $image_up = "images/".$image_name;
-
-                // move uploaded file ( $file_path, $destination)
                 if(move_uploaded_file($image_location, '../images/'.$image_name))
                 { $error = 0; }
                 else
@@ -58,7 +54,6 @@
                 $image_up = $data['img']; 
                 $error = 0;
             }
-            // echo ($error == 0) ? '0 error' : 'Error'; 
 
             // Update data
             $update = "UPDATE $tbl_name SET id='$ID', name='$NAME', class='$CLASS', img='$image_up', price='$PRICE', engine='$ENGINE', drive='$DRIVE', seat='$SEAT', speed='$SPEED', accel='$ACCEL', context='$CONTEXT' WHERE matr = $MATR";
@@ -68,16 +63,16 @@
             if($update && ($error == 0))
             {
                 echo "<script LANGUAGE='JavaScript'>
-                let notif = 'new toast({text: `Updated successfully` ,status: `success`})';
-                sessionStorage.setItem('notification', notif);
-                window.location.href='./content_edit.php?notif';
+                let notif = ['Updated successfully', 'success'];
+                sessionStorage.setItem('notification', JSON.stringify(notif));
+                window.location.href='./content_edit.php';
                 </script>";
             }
             else
             {
                 echo "<script LANGUAGE='JavaScript' type='text/javascript'>
-                let notif = 'new toast({text: `Failed to update` ,status: `failed`})';
-                sessionStorage.setItem('notification', notif);
+                let notif = ['Failed to update', 'error'];
+                sessionStorage.setItem('notification', JSON.stringify(notif));
                 window.location.href='./content_edit.php';
                 </script>";
             }
@@ -109,18 +104,12 @@
                         <div class="cell">
                             <label for="class">Class</label><br>
                             <select class="input" type="text" name="class" title="Class" required>
-                                <option value="<?php echo $data['class']?>" selected>
-                                    <?php
-                                        $value = $data['class'];
-                                        echo ($value == 's' || $value == 'a' || $value == 'b') ? 'Class '.ucfirst($value) : ucfirst($value)
-                                    ?>
-                                </option>
-                                <option value="s">Class S</option>
-                                <option value="a">Class A</option>
-                                <option value="b">Class B</option>
-                                <option value="truck">Truck</option>
-                                <option value="van">Van</option>
-                                <option value="motorcycle">Motorcycle</option>
+                                <option value="s" <?php echo($data['class'] == 's') ? 'selected' : '' ?>>Class S</option>
+                                <option value="a" <?php echo($data['class'] == 'a') ? 'selected' : '' ?>>Class A</option >
+                                <option value="b" <?php echo($data['class'] == 'b') ? 'selected' : '' ?>>Class B</option >
+                                <option value="truck" <?php echo($data['class'] == 'truck') ? 'selected' : '' ?>>Truck</option >
+                                <option value="van" <?php echo($data['class'] == 'van') ? 'selected' : '' ?>>Van</option>
+                                <option value="motorcycle" <?php echo($data['class'] == 'motorcycle') ? 'selected' : '' ?>>Motorcycle</option>
                             </select><br>
                         </div>
                         <div class="cell">

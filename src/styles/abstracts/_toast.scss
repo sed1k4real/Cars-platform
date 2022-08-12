@@ -46,7 +46,7 @@
         border-bottom: 5px solid p.$color-success;
     }
     
-    &.failed
+    &.error
     {
         @extend .toast;
         border-bottom: 5px solid p.$color-error;

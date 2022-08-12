@@ -125,7 +125,7 @@ aside {
   display: block;
 }
 
-.toast, .toast.alert, .toast.failed, .toast.success {
+.toast, .toast.alert, .toast.error, .toast.success {
   display: flex;
   align-items: center;
   padding: 1rem;
@@ -157,7 +157,7 @@ aside {
 .toast.success {
   border-bottom: 5px solid #00A86B;
 }
-.toast.failed {
+.toast.error {
   border-bottom: 5px solid #e2413c;
 }
 .toast.alert {
