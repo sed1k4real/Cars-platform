@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- script -->
+    <script src="../js/script.js" type="module"></script>
     <!------links------>
     <link rel="stylesheet" href="../dist/css/admin.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -11,9 +13,66 @@
     <title>Add vehicles</title>
 </head>
 <body>
-    <?php include 'admin_navbar.php'; ?>
+    <?php include 'admin_navbar.php'; 
+    include('../config/config.php');
 
-    <form action = "config/insert.php" method="POST" enctype="multipart/form-data">           
+    if(isset($_POST['upload']))
+    {
+        $ID = $_POST['id'];
+        $NAME = $_POST['name'];// need a filter
+        $PRICE = $_POST['price'];
+        $ENGINE = $_POST['engine'];
+        $DRIVE = $_POST['drive'];
+        $SEAT = $_POST['seat'];
+        $SPEED = $_POST['speed'];
+        $ACCEL = $_POST['accel'];
+        $CONTEXT = $_POST['context'];
+
+        if(!empty($_POST['class'])) {
+            $CLASS= $_POST['class'];
+        }
+
+        // Upload and transmit the images to the following folder
+        $IMAGE = $_FILES['image'];
+        $image_location = $_FILES['image']['tmp_name'];
+        $image_name = $_FILES['image']['name'];
+
+        // Storing path of the uploaded images
+        if(!empty($_FILES['image']['name']))
+        {
+            $image_up = "images/".$image_name;
+            if(move_uploaded_file($image_location, '../images/'.$image_name))
+            { $error = 0; }
+            else
+            { $error = 1; }
+        }
+        // Insert data to the DB table parameter 
+        $insert = "INSERT INTO vehicules(id, name, class, img, price, engine, drive, seat, speed, accel, context) VALUES('$ID', '$NAME', '$CLASS', '$image_up', '$PRICE', '$ENGINE', '$DRIVE', '$SEAT', '$SPEED', '$ACCEL', '$CONTEXT')";
+        mysqli_query($con, $insert);
+
+        // Check if the image is on the correct path 
+        if($insert && $error == 0)
+        {
+            echo "<script LANGUAGE='JavaScript'>
+            let notif = ['Added successfully', 'success'];
+            sessionStorage.setItem('notification', JSON.stringify(notif));
+            window.location.href='./content_edit.php';
+            </script>";
+        }
+        else
+        {
+            echo "<script LANGUAGE='JavaScript'>
+            let notif = ['Failed to add', 'error'];
+            sessionStorage.setItem('notification', JSON.stringify(notif));
+            window.location.href='./content_edit.php';
+            </script>";
+            //window.location.href='../content_insert.php';
+        }
+        mysqli_close($con);
+    }
+    ?>
+
+    <form action = "" method="POST" enctype="multipart/form-data">           
         <h2>Add vehicles</h2>
         <div class="form__container">
             <div class="cell">
