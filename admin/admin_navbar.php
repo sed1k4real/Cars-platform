@@ -12,6 +12,10 @@
             <a id="logo" class="navbar__logo" href="index.php"><h1>DZ<span id="col">CREW</span></h1></a>
             <div class="navbar__panel">
                 <div class="navbar__panel__container">
+                    <a class="<?= ($activePage == 'profile') ? 'active':''; ?>" href="">
+                        <span class="material-symbols-sharp">account_circle</span>
+                        <h3>Admin profile</h3>
+                    </a>
                     <a class="<?= ($activePage == 'index') ? 'active':''; ?>" href="index.php">
                         <span class="material-symbols-sharp">insights</span>
                         <h3>Insights</h3>

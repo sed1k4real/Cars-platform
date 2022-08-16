@@ -34,15 +34,15 @@ section
     {
         width: 100%;
         object-fit: cover;
-        border-radius: v.$border-rad-0;
+        // border-radius: v.$border-rad-0;
         aspect-ratio: 16/9;
     }
 
     &:hover
     {
         cursor: pointer;
-        transform: scale(1.05);
-        transition:v.$transition-1;
+        // transform: scale(1.05);
+        // transition:v.$transition-1;
     }
 
     &__body

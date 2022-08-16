@@ -9,12 +9,12 @@ body
 {
     display: flex;
     justify-content: space-around;
+    h2
+    {
+        padding-bottom: 0.4rem;
+    }
 }
 
-h2
-{
-    padding-bottom: 0.4rem;
-}
 
 .mainPage
 {

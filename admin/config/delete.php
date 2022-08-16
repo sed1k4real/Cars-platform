@@ -1,8 +1,8 @@
 <?php
 include('../../config/config.php');
 
-// $mtr = $_GET['id'];
-// $del_query = "DELETE FROM $tbl_name WHERE matr = $mtr";
+$mtr = $_GET['id'];
+$del_query = "DELETE FROM $tbl_name WHERE matr = $mtr";
 
     if(mysqli_query($con, $del_query))
     {

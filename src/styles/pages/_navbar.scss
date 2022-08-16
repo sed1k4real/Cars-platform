@@ -8,12 +8,6 @@ a
     color: p.$color-secondary;
 }
 
-h1
-{
-    padding-left: 2rem;
-    padding-right: 2rem;
-}
-
 #col
 {
     color: p.$color-primary;
@@ -29,94 +23,122 @@ nav
 {
     background-color: p.$color-dark;
     width: 100vw;
-    min-width: 45rem;
-    height: 3.5rem;
     position: fixed;
     top: 0;
     z-index: 11;
     box-shadow: 0 8px 8px 0 #0000001a;
 }
 
-
-.navbar{
-    height: 100%;
+.navbar
+{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    a
+    flex-flow: nowrap;
+    padding: 0 2rem ;
+    
+    &__container
     {
-        padding: 0.8rem 1.5rem;
-    }
-}
-
-.navbar__container
-{
-    display: inline-flex;
-    align-items: baseline;
-    white-space: nowrap;
-    gap: 2rem;
-    margin-right: 2rem;
-    a
-    {
-        border-bottom: 5px solid transparent;
-
-        &:hover
+        display: flex;
+        white-space: nowrap;
+        margin: 0 2rem;
+        // gap: 3rem;
+        a
+        {
+            // border-bottom: 5px solid transparent;
+            transition: v.$transition-0;
+            padding: 1.2rem 2rem;
+            transition: v.$transition-0;
+            display: flex;
+            &:hover
+            {
+                color: p.$color-primary;
+                transition: v.$transition-0;
+                // border-bottom: 5px solid p.$color-primary;
+            }
+        }
+    
+        .active
         {
             color: p.$color-primary;
-            border-bottom: 5px solid p.$color-primary;
-            transition: v.$transition-0;
+            // border-bottom: 5px solid p.$color-primary;
+        }
+    }
+    
+    ul
+    {
+        display: flex;
+        align-items: baseline;
+        gap: 1.8rem;
+    }
+
+    &__signup
+    {
+        font-size: v.$font-size-0;
+        white-space: nowrap;
+    }
+    
+    &__login
+    {
+        padding: 0.6rem 0;
+        width: 7%;
+        min-width: 7rem;
+        max-width: 10rem;
+        display: flex;
+        justify-content: center;
+        background-color: p.$color-primary;
+        border-radius: v.$border-rad-3;
+        font-size: v.$font-size-1;
+    }
+    
+    /*------------- DropDown button ------------------*/
+    .dropdown
+    {
+        position: relative;
+        display: inline-block;
+        // text-align: center;
+        a
+        {
+            display: flex;
+        }
+        &-content
+        {
+            overflow: hidden;
+            display: none;
+            position: absolute;
+            background-color: p.$color-secondary;
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.15);
+            z-index: 10;
+            border-bottom-right-radius: v.$border-rad-1;
+            border-bottom-left-radius: v.$border-rad-1;
+            // margin-top: 0.2rem;
+
+            a
+            {
+                display: block;
+                text-align: center;
+                padding: 0.8rem 2.7rem;
+                color: p.$color-dark;
+                border-bottom: 5px solid transparent;
+                &:hover
+                {
+                    border-bottom: 5px solid p.$color-primary;
+                    transition: v.$transition-0;
+                }
+            }
         }
     }
 
-    .active
+    .dropdown:hover .dropdown-content
     {
-        color: p.$color-primary;
-        border-bottom: 5px solid p.$color-primary;
+        display: block;
     }
 }
 
 .material-symbols-outlined
 {
     position: relative;
-    transform: translateY(7px);
+    transform: translateY(2px);
 }
 
-/*------------- DropDown button ------------------*/
-
-.dropdown
-{
-    position: relative;
-    display: inline-block;
-    a
-    {
-        padding: 0.9rem 1.6rem;
-    }
-
-    .dropdown-content
-    {
-        overflow: hidden;
-        display: none;
-        position: absolute;
-        background-color: p.$color-secondary;
-        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1);
-        margin-top: 1.1rem;
-        z-index: 10;
-        border-bottom-right-radius: v.$border-rad-1;
-        border-bottom-left-radius: v.$border-rad-1;
-
-        a
-        {
-            display: block;
-            text-align: center;
-            padding: 0.8rem 2.2rem;
-            color: p.$color-dark;
-            font-size: 13px;
-        }
-    }
-}
-
-.dropdown:hover .dropdown-content
-{
-    display: block;
-}
 /*------------ End of nav bar ------------*/

@@ -35,7 +35,7 @@
                             <h2 class='content__card__title'>$row[name]</h2>
                             <div class='content__card__body'>
                                 <a href='update.php? id=$row[matr]' class='edit' name='edit'>Edit</a>
-                                <a onclick='checker()' href='config/delete.php? id=$row[matr]' class='delete' name='delete'>Delete</a>
+                                <a onclick='checker()' href='./config/delete.php? id=$row[matr]' class='delete' name='delete'>Delete</a>
                             </div>
                         </div>
                         ";

@@ -15,7 +15,8 @@
         include ('../config/config.php');
 
         // fetch data from DB to rows
-        $MATR = $_GET['id']; //should add filter
+        // $MATR = $_GET['id']; //should add filter 'sanitize'
+        $MATR = filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
         $query_fetch = mysqli_query($con, "SELECT * FROM $tbl_name WHERE MATR = $MATR");
         $data = mysqli_fetch_array($query_fetch);
 
@@ -64,18 +65,18 @@
             {
                 echo "<script LANGUAGE='JavaScript'>
                 let notif = ['Updated successfully', 'success'];
-                sessionStorage.setItem('notification', JSON.stringify(notif));
-                window.location.href='./content_edit.php';
                 </script>";
             }
             else
             {
                 echo "<script LANGUAGE='JavaScript' type='text/javascript'>
                 let notif = ['Failed to update', 'error'];
-                sessionStorage.setItem('notification', JSON.stringify(notif));
-                window.location.href='./content_edit.php';
                 </script>";
             }
+            echo"<script LANGUAGE='JavaScript' type='text/javascript'>
+            sessionStorage.setItem('notification', JSON.stringify(notif));
+            window.location.href='./content_edit.php';
+            </script>";
             mysqli_close($con);
         }
     ?>
@@ -85,10 +86,6 @@
             <h2>Update vehicles</h2>
             <div class="form">
                 <div class="form__container">
-                        <div class="cell__hidden">
-                            <label for="matr">Matr</label><br>
-                            <input class="input" type="number" name="matr" placeholder="Matricule" value='<?php echo $data['matr']?>' required><br>
-                        </div>
                         <div class="cell">
                             <label for="id">ID</label><br>
                             <input class="input" type="number" name="id" placeholder="ID" value='<?php echo $data['id']?>' required><br>

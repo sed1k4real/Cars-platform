@@ -15,11 +15,12 @@
 <body>
     <?php include 'admin_navbar.php'; 
     include('../config/config.php');
+    require('./config/functions.php');
 
     if(isset($_POST['upload']))
     {
         $ID = $_POST['id'];
-        $NAME = $_POST['name'];// need a filter
+        $NAME = $_POST['name'];
         $PRICE = $_POST['price'];
         $ENGINE = $_POST['engine'];
         $DRIVE = $_POST['drive'];
@@ -41,6 +42,7 @@
         if(!empty($_FILES['image']['name']))
         {
             $image_up = "images/".$image_name;
+            // Check if the image is on the correct path 
             if(move_uploaded_file($image_location, '../images/'.$image_name))
             { $error = 0; }
             else
@@ -50,24 +52,24 @@
         $insert = "INSERT INTO vehicules(id, name, class, img, price, engine, drive, seat, speed, accel, context) VALUES('$ID', '$NAME', '$CLASS', '$image_up', '$PRICE', '$ENGINE', '$DRIVE', '$SEAT', '$SPEED', '$ACCEL', '$CONTEXT')";
         mysqli_query($con, $insert);
 
-        // Check if the image is on the correct path 
         if($insert && $error == 0)
         {
             echo "<script LANGUAGE='JavaScript'>
             let notif = ['Added successfully', 'success'];
-            sessionStorage.setItem('notification', JSON.stringify(notif));
-            window.location.href='./content_edit.php';
             </script>";
         }
         else
         {
             echo "<script LANGUAGE='JavaScript'>
             let notif = ['Failed to add', 'error'];
-            sessionStorage.setItem('notification', JSON.stringify(notif));
-            window.location.href='./content_edit.php';
             </script>";
-            //window.location.href='../content_insert.php';
         }
+
+        echo "<script LANGUAGE = 'JavaScript'>
+        sessionStorage.setItem('notification', JSON.stringify(notif));
+        // window.location.href='./content_edit.php';
+        </script>";
+
         mysqli_close($con);
     }
     ?>
