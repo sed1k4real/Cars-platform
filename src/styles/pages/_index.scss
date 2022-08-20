@@ -1,24 +1,22 @@
 @use '../base/reset';
+@use '../abstracts/variables' as v;
+@use '../base/palette' as p;
 
-body
+.mainPage
 {
-    margin-top: 5rem;
-}
-
-.container
-{
+    margin: 5rem 2rem 0 2rem;
     display: flex;
     justify-content: space-around;
     h2
     {
         padding-bottom: 0.4rem;
     }
+    
+    &__container
+    {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        width: 70%;
+    }
 }
 
-
-.mainPage
-{
-    padding-left: 1rem;
-    padding-right: 1rem;
-    width: 70%;
-}

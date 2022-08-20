@@ -1,0 +1,164 @@
+@use '../abstracts/variables' as v;
+@use '../base/palette' as p;
+
+/*----------------Sign up--------------------*/ 
+.signup
+{
+    &__header
+    {
+        display: flex;
+        justify-content: space-between;
+        margin: 1.2rem 2rem 1rem 2rem;
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 0;
+        gap: 5rem;
+        z-index: 11;
+        h4, a
+        {
+            display: flex;
+            align-self: center;
+            justify-content: center;
+            align-items: center;
+            font-size: v.$font-size-1;
+        }
+
+        .home
+        {
+            color: p.$color-dark;
+            padding: 0.6rem;
+            min-width: 6rem;
+            border-radius: v.$border-rad-0;
+            background-color: p.$color-secondary;
+            box-shadow:  0 5px 10px rgba(0, 0, 0, 0.1);
+            
+            span
+            {
+                padding-right: 0.4rem;
+                transform: translateY(-1px);
+            }
+        }
+
+        &__login
+        {
+            display: flex;
+            align-items: center;
+            h3
+            {
+                color: p.$color-black;
+                font-size: v.$font-size-1;
+                margin-right: 0.6rem;
+            }
+            &__btn
+            {
+                h4
+                {
+                    width: 10%;
+                    min-width: 5rem;
+                    padding: 0.6rem;
+                    color: p.$color-secondary;
+                    background-color: p.$color-primary;
+                    border-radius: v.$border-rad-1;
+                }
+            }
+        }
+    }
+
+    &__container
+    {
+        display: grid;
+        grid-template-columns: 30% 70%;
+        grid-auto-flow: dense;
+        height: 100vh;
+        &__form
+        {
+            padding: 4rem 5rem 4rem 5rem;
+            width: 100%;
+            margin: auto;
+            min-width: 11rem;
+            form
+            {
+                display: grid;
+                grid-template-rows: repeat(4, 1fr);
+                row-gap: 1rem;
+                padding-bottom: 2rem;
+                input
+                {
+                    height: 2.6rem;
+                    width: 100%;
+                    border-radius: v.$border-rad-1;
+                    padding-left: 0.8rem;
+                    border: 2px solid p.$color-grey-light;
+                    transition: v.$transition-0;
+                    &:focus
+                    {
+                        border: 2px solid p.$color-primary;
+                        transition: v.$transition-0;
+                    }
+                }
+                
+                h4 
+                {
+                    font-size: v.$font-size-2;
+                    color: p.$color-grey;
+                }
+            }
+
+            .btn
+            {   
+                button
+                {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 1rem;
+                    margin: 0.6rem 0.6rem 1.2rem 0.6rem;
+                    width: 50%;
+                    min-width: 11rem;
+
+                    &:hover
+                    {
+                        cursor: pointer;
+                    }
+                }
+                
+                &__signup
+                {
+                    color: p.$color-secondary;
+                    background-color: p.$color-primary;
+                    border-radius: v.$border-rad-3;
+                }
+
+                &__google
+                {
+                    color: p.$color-grey;
+                    background-color: p.$color-grey-light;
+                    border-radius: v.$border-rad-3;
+                    img
+                    {
+                        padding-right: 0.6rem;
+                        height: 22px;
+                        width: 22px;
+                    }
+                }
+                h4
+                {
+                    font-size: v.$font-size-1;
+                }
+                
+            }
+        }
+
+        &__img
+        {
+            overflow: hidden;
+            img
+            {
+                height: 100%;
+                object-fit: cover;
+                transform: translateX(-27rem);
+            }
+        }
+    }
+}

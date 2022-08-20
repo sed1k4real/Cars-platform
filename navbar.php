@@ -4,6 +4,8 @@
 
     <!--Stylesheet-->
     <link rel="stylesheet" type="text/css" href="dist/css/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,800;1,800&display=swap" rel="stylesheet">
     <title>Navbar</title>
 </head>
 
@@ -33,8 +35,8 @@
             </div>
             <!-- <a class="navbar__login" href="">Login</a> -->
             <ul>
-                <li><a class="navbar__signup" href=""><h4>Sign up</h4></a></li>
-                <li><a class="navbar__login" href="">Login</a></li>
+                <li><a class="navbar__signup" href="sign_up.php"><h4>Sign up</h4></a></li>
+                <li><a class="navbar__login" href="log_in.php">Login</a></li>
             </ul>
         </div>
     </nav>

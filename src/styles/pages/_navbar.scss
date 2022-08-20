@@ -2,11 +2,6 @@
 @use '../base/palette' as p;
 
 /*------------Navigation bar------------- */
-a
-{
-    font-weight: 400;
-    color: p.$color-secondary;
-}
 
 #col
 {
@@ -37,6 +32,10 @@ nav
     flex-flow: nowrap;
     padding: 0 2rem ;
     
+    a
+    {
+        color: p.$color-secondary;
+    }
     &__container
     {
         display: flex;
